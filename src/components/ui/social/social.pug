@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (social)
+
+mixin social(mods)
+  //- Принимает:
+  //-   mods: ''          {string} - модификаторы блока
+  //- Вызов:
+    +social
+      +social-link('https://www.facebook.com/profile.php?id=100011672930358', 'fb')(title='Facebook')
+        svg(xmlns='http://www.w3.org/2000/svg', width='16', height='16', viewBox='0 0 470.513 470.513')
+          path(d='M271.521 154.17v-40.541c0-6.086.28-10.8.849-14.13.567-3.335 1.857-6.615 3.859-9.853 1.999-3.236 5.236-5.47 9.706-6.708 4.476-1.24 10.424-1.858 17.85-1.858h40.539V0h-64.809c-37.5 0-64.433 8.897-80.803 26.691-16.368 17.798-24.551 44.014-24.551 78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086h-73.37z')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social--' + modsList[i].trim();
+      }
+    }
+
+  ul.social(class=allMods)&attributes(attributes)
+    block
+
+mixin social-link(link, mods)
+  //- Принимает:
+  //-   link     {string} - ссылка
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+    +social-link('https://vk.com/n.gromov', 'some-mod')
+      span ВКонтакте
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social__link-wrap--' + modsList[i].trim();
+      }
+    }
+
+  li.social__link-wrap(class=allMods)&attributes(attributes)
+    a.social__link(href=link)
+      block

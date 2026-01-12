@@ -1,0 +1,64 @@
+// В этом файле должны быть стили для БЭМ-блока tabs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tabs {
+  $block-name: &; // #{$block-name}__element
+
+  &__links {
+    @include list-reset;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__link-wrap {
+    position: relative;
+
+    &--active {
+
+      #{$block-name}__link {
+        color: #ffffff;
+        background-color: $color-main;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    line-height: 100%;
+    color: #353742;
+    text-align: center;
+    background-color: #eef3f9;
+    border-radius: 6px 6px 0;
+  }
+
+  &__content-wrapper {
+    display: block;
+  }
+
+  &__content-item {
+    position: relative;
+    display: none;
+
+    &--active {
+      display: block;
+      animation: tab-fade-in $transition-time;
+    }
+  }
+}
+
+@keyframes tab-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

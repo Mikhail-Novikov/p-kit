@@ -1,0 +1,75 @@
+/* stylelint-disable max-nesting-depth */
+/* stylelint-disable at-rule-no-unknown */
+// В этом файле должны быть стили для БЭМ-блока field-checkbox, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.field-checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  display: block;
+
+  &__title {
+    @include field-name;
+  }
+
+  &__input-wrap {
+    & + & {
+      margin-top: $typo-margin-vertical;
+    }
+  }
+
+  &__name {
+    display: flex;
+    gap: 0 10px;
+    align-items: flex-start;
+  }
+
+  &__name-text {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &__input {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    color: #000000;
+    appearance: none;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    transition: background $transition-time cubic-bezier(0.1, 0.1, 0.25, 1);
+
+    &.just-validate-error-field {
+      border-color: $color-danger;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($color-danger, $opacity);
+      }
+    }
+
+    &:focus {
+      @include field-focus;
+    }
+
+    &:checked {
+      // background-color: $color-main;
+      // border-color: $color-main;
+      background-image: url("../images/checkbox.svg");
+    }
+  }
+
+  &__help-text-wrap {
+    padding-left: 1.5em;
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+}

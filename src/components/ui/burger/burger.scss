@@ -1,0 +1,20 @@
+/* stylelint-disable max-nesting-depth */
+// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.burger {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  background-image: url("../images/burger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  border: none;
+}

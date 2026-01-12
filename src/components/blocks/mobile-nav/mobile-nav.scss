@@ -1,0 +1,121 @@
+// В этом файле должны быть стили для БЭМ-блока mobile-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.mobile-nav {
+  $mobile-nav: &; // #{$mobile-nav}__element
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+
+  &__phone,
+  &__mail {
+    font-size: 20px;
+    font-weight: 700;
+
+    a {
+      color: $text-color;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    outline: 0;
+  }
+
+  &__phone {
+    margin-bottom: 10px;
+  }
+
+  &__dialog {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    margin-left: auto;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 50px 15px 30px;
+    overflow-y: auto;
+    pointer-events: auto;
+    outline: 0;
+    background-color: #ffffff;
+  }
+
+  &__menu {
+    margin-bottom: 30px;
+  }
+
+  &__action {
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    position: relative;
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &--show {
+
+    #{$mobile-nav}__dialog {
+      animation: mobile-nav-dialog 0.3s 1 ease-out forwards;
+    }
+  }
+}
+
+.mobile-nav-open {
+  overflow: hidden;
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.5);
+  backdrop-filter: blur(6px);
+  animation: mobile-nav-backdrop 0.3s 1 ease-out forwards;
+}
+
+
+@keyframes mobile-nav-backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-nav-dialog {
+  from {
+    transform: translate(100%, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}

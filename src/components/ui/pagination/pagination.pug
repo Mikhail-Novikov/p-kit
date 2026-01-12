@@ -1,0 +1,52 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pagination)
+
+mixin pagination(mods)
+  //- Принимает:
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+    +pagination
+      +pagination-item('1', '#')
+      +pagination-item('2', '', true)
+      +pagination-item('3', '#')
+      +pagination-item('4', '#')
+      +pagination-item('...')
+      +pagination-item('5', '#')
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' pagination--' + modsList[i].trim();
+      }
+    }
+
+  nav.pagination(class=allMods, aria-label="Записи")&attributes(attributes)
+    h2.screen-reader-text Навигация по записям
+    .nav-links
+      a.page-numbers.prev(href="#") Назад
+      block
+      a.page-numbers.next(href="#") Далее
+
+mixin pagination-item(text, href, active, mods)
+  //- Принимает:
+  //-   text   {string} - содержимое пункта
+  //-   href   {string} - ссылка этого пункта (если пустая, то это не ссылка, а span)
+  //-   active {bool}   - флаг «это активный пункт»
+  //-   mods   {string} - список модификаторов
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-numbers--' + modsList[i].trim();
+      }
+    }
+    if(typeof(active) !== 'undefined' && active) {
+      allMods = allMods + ' current';
+    }
+  if (typeof(href) !== 'undefined' && href)
+    a.page-numbers(class=allMods, href=href)&attributes(attributes)!= text
+  else
+    span.page-numbers(class=allMods)&attributes(attributes)!= text

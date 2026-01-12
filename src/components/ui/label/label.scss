@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока label, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.label {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.4em 0.2em;
+  margin: 0 0.1em;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: baseline;
+  color: $text-color;
+  text-transform: none;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  // &--main {
+  //   background-color: $color-main;
+  //   color: #fff;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: #fff;
+  //   }
+  // }
+}

@@ -1,0 +1,99 @@
+// В этом файле должны быть стили для БЭМ-блока field-num, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+@use "sass:color";
+
+.field-num {
+  $block-name: &; // #{$block-name}__element
+
+  display: block;
+  margin-bottom: $typo-margin-vertical;
+
+  &__name {
+    @include field-name;
+  }
+
+  &__input-wrap {
+    display: block;
+  }
+
+  &__input-and-btns {
+    position: relative;
+    display: block;
+    width: 140px;
+  }
+
+  &__input {
+    @include field-text;
+
+    padding: $field-padding-vertical 45px;
+    text-align: center;
+
+    #{$block-name}:not(#{$block-name}--disabled) button:focus ~ & {
+      @include field-focus;
+    }
+  }
+
+  &__btn {
+    @include btn-reset;
+
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    width: 40px;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: #e6e6e6;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    #{$block-name}--disabled & {
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    &--plus {
+      right: 1px;
+      background: url("../images/plus.svg") center no-repeat;
+      background-size: 14px 14px;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    &--minus {
+      left: 1px;
+      background: url("../images/minus.svg") center no-repeat;
+      background-size: 14px 14px;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+
+
+  &--error {
+
+    #{$block-name}__name,
+    #{$block-name}__input,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+
+    #{$block-name}__input {
+      background-color: color.adjust($color-danger, $lightness: 35%);
+      border-color: $color-danger;
+    }
+  }
+}

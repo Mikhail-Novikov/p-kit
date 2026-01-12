@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+@use "sass:color";
+
+// @property --gradient-button-fill {
+//   syntax: "<color>";
+//   inherits: true;
+//   initial-value: #ffffff;
+// }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  color: $text-color;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus {
+    color: $text-color;
+    text-decoration: none;
+    background-color: color.adjust(#e6e6e6, $lightness: -10%);
+  }
+
+  &:active,
+  &:focus {
+    @include field-focus;
+  }
+
+  &--disabled,
+  &:disabled {
+    color: $text-color;
+    cursor: not-allowed;
+    background-color: #e6e6e6;
+    opacity: $opacity;
+
+    /* stylelint-disable-next-line at-rule-no-unknown */
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+
+  &--main {
+    color: #ffffff;
+    background-color: $color-main;
+
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      background-color: color.adjust($color-main, $lightness: -10%);
+    }
+
+    &--disabled,
+    &:disabled {
+      color: #ffffff;
+      background-color: $color-main;
+    }
+  }
+
+  // &--gradient {
+  //   color: $text-color;
+  //   background:
+  //     linear-gradient(var(--gradient-button-fill, #ffffff) 0 0) padding-box,
+  //     linear-gradient(-45deg, #ff0000, #00ff00) border-box;
+  //   border: 2px solid transparent;
+  //   transition: --gradient-button-fill $transition-time;
+
+  //   &:hover,
+  //   &:focus {
+  //     --gradient-button-fill: transparent;
+  //   }
+  // }
+}

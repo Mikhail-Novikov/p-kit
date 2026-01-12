@@ -1,0 +1,32 @@
+// В этом файле должны быть стили для БЭМ-блока social, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.social {
+  $social: &; // #{$social}__
+
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+
+  &__link {
+    @include flex-all-center;
+
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #808080;
+    border-radius: 50%;
+    transition: color $transition-time, background-color $transition-time, opacity $transition-time;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,118 @@
+/* stylelint-disable max-nesting-depth */
+// В этом файле должны быть стили для БЭМ-блока main-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-nav {
+  $block-name: &; // #{$block-name}__element
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 120%;
+    color: $text-color;
+    list-style: none;
+  }
+
+  .menu > .menu-item > a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    color: inherit;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  .menu > .current-menu-item > a {
+    color: $color-main;
+  }
+
+  .sub-menu {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #ffffff;
+
+    @include tablet-viewport-up {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: $z-index-modal;
+      width: 200px;
+
+      .sub-menu {
+        top: 0;
+        left: 100%;
+      }
+
+      .menu-item-has-children > a::after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .sub-menu > .menu-item > a {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    color: inherit;
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+  }
+
+  .menu-item {
+    position: relative;
+
+    @include tablet-viewport {
+      width: 100%;
+    }
+  }
+
+  .menu-item-has-children {
+    &:hover {
+      & > .sub-menu {
+        display: block;
+        animation: submenu-fade-in $transition-time;
+      }
+    }
+  }
+
+  .menu-item-has-children.focus {
+    & > .sub-menu {
+      display: block;
+    }
+  }
+
+  .menu-item-has-children > a::after {
+    display: inline-flex;
+    margin-left: 0.3em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+}
+
+@keyframes submenu-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

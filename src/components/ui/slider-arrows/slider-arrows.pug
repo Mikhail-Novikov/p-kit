@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-arrows)
+
+mixin slider-arrows(props, mods)
+
+  //- Принимает:
+  //-   props   {object} - пропсы
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +slider-arrows({title: 'Заголовок', description: 'Описание'}, 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(mods) {
+      allMods = mods.split(',').map(mod => 'slider-arrows--' + mod.trim()).join(' ');
+    }
+
+  .slider-arrows(class=allMods)&attributes(attributes)
+    .slider-arrows__button.slider-arrows__button--prev
+      svg(width="12" height="25" viewBox="0 0 12 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M10.5 22.6895L1.5 12.1894L10.5 1.68945" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+    .slider-arrows__button.slider-arrows__button--next
+      svg(width="12" height="25" viewBox="0 0 12 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M1.5 1.68942L10.5 12.1895L1.5 22.6895" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")

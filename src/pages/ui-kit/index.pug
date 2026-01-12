@@ -1,0 +1,129 @@
+extends ./layout/index
+
+block meta
+  title PERCo — оборудование и системы контроля доступа
+
+block consts
+  - const bodyClass = "kit";
+
+block content
+  header
+    .container
+      a(href="index.html")
+        img.logo(
+          src="https://www.perco.ru/images/2023/logo.svg",
+          width="99",
+          height="26",
+          alt="PERCo — UI Kit",
+          title="PERCo — UI Kit"
+        )
+      h1
+        | UI Kit
+      p
+        | UI Kit от PERCo — это набор компонентов и стилей, которые помогут вам быстро и легко создавать переиспользуемые интерфейсы.
+
+  main.guide-content
+    nav.sidebar
+      .sidebar-col.sidebar-col-first
+        a(href="#buttons")
+          | Buttons
+        ul.sidebar-menu
+          li
+            a(href="#primary-button")
+              | Primary button
+          li
+            a(href="#secondary-button")
+              | Secondary button
+          li
+            a(href="#tertiary-button")
+              | Tertiary button
+          li
+            a(href="#outlined-button")
+              | Outlined button
+
+      .sidebar-col
+        a(href="#html")
+          | HTML
+        ul.sidebar-menu
+          li
+            a(href="#html-basic-parts")
+              | Базовые части разметки
+
+      .sidebar-col.sidebar-col-last
+        a(href="#css")
+          | CSS
+        ul.sidebar-menu
+          li
+            a(href="#css-import")
+              | Правило @import
+
+    .chapters
+      section.chapter
+        h2#buttons
+          | Buttons
+        article.chapter-part
+          .chapter-part-col
+            p
+              | Кнопки могут быть использованы в различных состояниях и размерах
+          .chapter-part-col.gray-bgcolor
+            ul
+              li
+                | Default 44px
+              li
+                | Small 32px
+
+        article.chapter-part
+          .chapter-part-col
+            h3#primary-button
+              | Primary button
+            p
+              | Кнопка, которая выполняет основное действие на странице.
+            br
+            button.btn.btn--primary
+              | Primary
+          .chapter-part-col.gray-bgcolor
+            figure
+              pre
+                code.language-markup
+                  | &lt;button class="btn btn--primary"&gt;
+                  | &nbsp;&nbsp;Primary
+                  | &lt;/button&gt;
+
+        article.chapter-part
+          .chapter-part-col
+            h3#secondary-button
+              | Secondary button
+            p
+              | Кнопка, которая выполняет вспомогательное действие на странице.
+
+          .chapter-part-col.gray-bgcolor
+            button.btn.btn--secondary
+              | Secondary
+            code.language-markup
+              | &lt;button class="btn btn--secondary"&gt;Secondary&lt;/button&gt;
+
+        article.chapter-part
+          .chapter-part-col
+            h3#outlined-button
+              | Outlined button
+            p
+              | Кнопка с контуром, которая выполняет дополнительное действие на странице.
+
+          .chapter-part-col.gray-bgcolor
+            button.btn.btn--outlined
+              | Outlined
+            code.language-markup
+              | &lt;button class="btn btn--outlined"&gt;Outlined&lt;/button&gt;
+
+        article.chapter-part
+          .chapter-part-col
+            h3#tertiary-button
+              | Tertiary button
+            p
+              | Кнопка, которая выполняет менее важное действие на странице.
+
+          .chapter-part-col.gray-bgcolor
+            button.btn.btn--tertiary
+              | Tertiary
+            code.language-markup
+              | &lt;button class="btn btn--tertiary"&gt;Tertiary&lt;/button&gt;

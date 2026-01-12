@@ -1,0 +1,47 @@
+// В этом файле должны быть стили для БЭМ-блока marquee, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.marquee {
+  --marquee-gap: 10px;
+  --marquee-speed: 40s;
+  --marquee-direction: forwards;
+
+  $marquee: &; // #{$marquee}__element
+
+  &[data-direction="right"] {
+    --marquee-direction: reverse;
+  }
+
+  &__wrapper {
+    overflow-x: hidden;
+  }
+
+  &__scroller {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--marquee-gap);
+    width: max-content;
+    animation: scroll var(--marquee-speed, 40s) var(--marquee-direction) linear infinite;
+  }
+
+  &__scroller-item {
+    @include flex-all-center;
+    position: relative;
+    width: 219px;
+    height: 131px;
+    background-color: #ffffff;
+    border-radius: 13px;
+
+    img {
+      @include image-absolute-cover;
+      border-radius: inherit;
+    }
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - calc(10px / 2)));
+  }
+}

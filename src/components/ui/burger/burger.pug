@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (burger)
+
+mixin burger(label)
+  //- Вызов:
+    +burger('Показать ничто')(data-some="SOME")
+
+  -
+    label = label || 'Toggle block ' + targetId
+
+  button.burger(
+    aria-label=label,
+    type="button",
+    data-burger="",
+    aria-pressed="false"
+  )&attributes(attributes)
+    span.visually-hidden!= label

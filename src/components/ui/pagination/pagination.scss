@@ -1,0 +1,53 @@
+/* stylelint-disable at-rule-no-unknown */
+// В этом файле должны быть стили для БЭМ-блока pagination, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.pagination {
+  margin-top: 50px;
+
+  .screen-reader-text {
+    @include visually-hidden;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .page-numbers {
+    @include flex-all-center;
+    flex-shrink: 0;
+    min-width: 40px;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    color: #00121a;
+    border-radius: 30px;
+    transition: background-color $transition-time, color $transition-time;
+
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      text-decoration: none;
+      background-color: $color-main;
+    }
+
+    &.current {
+      color: #ffffff;
+      background-color: $color-main;
+    }
+
+    &.next,
+    &.prev {
+      padding: 5px 15px;
+    }
+  }
+
+  span.page-numbers {
+    cursor: default;
+  }
+}
