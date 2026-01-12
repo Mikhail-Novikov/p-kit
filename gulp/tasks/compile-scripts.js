@@ -1,0 +1,33 @@
+import browserslistToEsbuild from 'browserslist-to-esbuild';
+import gulp from 'gulp';
+import { createGulpEsbuild } from 'gulp-esbuild';
+import notify from 'gulp-notify';
+import plumber from 'gulp-plumber';
+import { isDevelopment } from '../utils.js';
+
+export const compileScripts = () => {
+  const gulpEsbuild = createGulpEsbuild({ incremental: isDevelopment });
+
+  return gulp
+    .src('src/scripts/entry.js')
+    .pipe(
+      plumber({
+        errorHandler: notify.onError({
+          title: 'JS',
+          message: 'Error: <%= error.message %>',
+        }),
+      }),
+    )
+    .pipe(
+      gulpEsbuild({
+        bundle: true,
+        outfile: 'scripts.js',
+        platform: 'browser',
+        minify: !isDevelopment,
+        sourcemap: isDevelopment,
+        target: browserslistToEsbuild(),
+        legalComments: 'none',
+      }),
+    )
+    .pipe(gulp.dest('build/js'));
+};
