@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (chapter)
+
+mixin chapter(title, id, parts)
+  //- Принимает:
+  //-   title {string} - заголовок главы
+  //-   id    {string} - id для якоря
+  //-   parts {array}  - массив объектов с частями главы
+  //- Вызов:
+  //-   +chapter('Buttons', 'buttons', [{title: 'Primary button', componentExample: '<button class="btn btn--primary">Primary</button>', description: '...', code: '...'}, ...])
+
+  section.chapter
+    h2(id=id)= title
+    each part in parts
+      article.chapter-part
+        .chapter-part-col
+          if part.title
+            h3(id=part.id || '')= part.title
+          if part.code
+            != part.code
+          if part.description
+            p= part.description
+          block
+        .chapter-part-col.gray-bgcolor
+          if part.example
+            != part.example
+          if part.code
+            pre
+              code.language-markup= part.code

@@ -1,11 +1,13 @@
-$color-main: #0275d9;
-$color-success: #2e8555;
-$color-danger: #b81111;
-$color-warning: #efac4d;
-
+$color-main: #214288;
+$color-success-light: #C8DBFF;
+$color-danger : #E64646;
+$color-danger-light : #FFC8C8;
+$color-warning: #D37F32;; 
+$color-warning-light: #FDF0D2;
+ 
 // Семантические цвета
-$text-color: #333333;
-$heading-color: #1a1a1a;
+$text-color: #2C2D2E;
+$heading-color: #1a1a1a; 
 $text-color-muted: #808080;
 $body-bg: #ffffff;
 $link-color: $color-main;
@@ -17,7 +19,7 @@ $font-size: 16px;
 $font-size-h1: 40px;
 $font-size-h2: 32px;
 $font-size-h3: 24px;
-$font-size-h4: 18px;
+$font-size-h4: 20px;
 $font-size-h5: 16px;
 $font-size-h6: 16px;
 $font-size-sm: 0.75em;

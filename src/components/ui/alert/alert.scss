@@ -41,39 +41,38 @@
     margin: 0;
   }
 
+  &--warning {
+    background-color: $color-warning-light;
+    color: $text-color;
+  }
 
-  // &--warning {
-  //   background-color: lighten($color-warning, 30%);
-  //   color: $text-color;
-  // }
+  &--danger {
+    background-color: $color-danger-light;
+    color: #fff;
 
-  // &--danger {
-  //   background-color: $color-danger;
-  //   color: #fff;
+    a {
+      color: inherit;
+      text-decoration: underline;
 
-  //   a {
-  //     color: inherit;
-  //     text-decoration: underline;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
 
-  //     &:hover,
-  //     &:focus {
-  //       text-decoration: none;
-  //     }
-  //   }
-  // }
+  &--success {
+    background-color: $color-success-light;
+    color: #fff;
 
-  // &--success {
-  //   background-color: $color-success;
-  //   color: #fff;
+    a {
+      color: inherit;
+      text-decoration: underline;
 
-  //   a {
-  //     color: inherit;
-  //     text-decoration: underline;
-
-  //     &:hover,
-  //     &:focus {
-  //       text-decoration: none;
-  //     }
-  //   }
-  // }
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
 }

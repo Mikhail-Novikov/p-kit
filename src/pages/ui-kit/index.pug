@@ -127,3 +127,37 @@ block content
               | Tertiary
             code.language-markup
               | &lt;button class="btn btn--tertiary"&gt;Tertiary&lt;/button&gt;
+          +alert("Success message", { mods: ["success"] })
+          
+      +chapter('Alerts', 'new-chapter', [
+        {
+          title: 'Success alert',
+          id: 'sub1',
+          description: 'Описание первого подраздела.',
+          example: '+alert("Success message", { mods: ["success"] })',
+          code:`
+<div class="alert alert--success" role="alert">
+  <h4 class="alert__header">Success message</h4>
+</div>
+          `
+        },
+        {
+          title: 'Error alert',
+          id: 'sub2',
+          description: 'Описание первого подраздела.',
+          example: '+alert("Error message", { mods: ["danger"] })',
+          code:`
+<div class="alert alert--danger" role="alert">
+  <h4 class="alert__header">Error message</h4>
+</div>
+          `
+        },
+        {
+          title: 'Warning alert',
+          id: 'sub3',
+          componentExample: '+alert("Warning message", { mods: ["warning"] })',
+          description: 'Описание третьего подраздела.',
+          example: 'a.btn(href="#") Пример ссылки',
+          code: '<div class="alert alert--warning" role="alert"><h4 class="alert__header">Warning message</h4></div>'
+        }
+      ])

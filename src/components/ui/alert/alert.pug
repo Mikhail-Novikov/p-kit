@@ -20,9 +20,15 @@ mixin alert(title, mods)
   -
     //- список модификаторов
     var allMods = '';
-    if(typeof(mods) === 'string') {
+    if(typeof(mods) === 'object' && !Array.isArray(mods) && mods.mods) {
+      mods = mods.mods;
+    }
+    if(Array.isArray(mods)) {
+      for (var i = 0; i < mods.length; i++) {
+        allMods = allMods + ' alert--' + mods[i].trim();
+      }
+    } else if(typeof(mods) === 'string') {
       var modsList = mods.split(',');
-
       for (var i = 0; i < modsList.length; i++) {
         allMods = allMods + ' alert--' + modsList[i].trim();
       }
