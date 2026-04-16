@@ -1,6 +1,7 @@
 /node_modules
 /build
 /dist
+README_LINK.md
 /src/styles/styles.scss
 /src/scripts/entry.js
 /src/components/mixins.pug
