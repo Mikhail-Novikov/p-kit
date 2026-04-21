@@ -7,6 +7,7 @@ import prettyHtml from 'gulp-pretty-html';
 import pug from 'gulp-pug';
 import { readFileSync } from 'node:fs';
 import { PrettyHtmlConfig } from '../configs.js';
+import { isDevelopment } from '../utils.js';
 import { getClassesToBlocksList } from './get-blocks-from-html.js';
 
 export const compilePug = () =>
@@ -26,12 +27,14 @@ export const compilePug = () =>
           readFileSync('./src/data/data.json', 'utf8'),
         );
         let cssFile = 'styles.css';
-        try {
-          const manifest = JSON.parse(
-            readFileSync('build/css/css-rev-manifest.json', 'utf8'),
-          );
-          cssFile = manifest['styles.css'] || cssFile;
-        } catch (e) {}
+        if (!isDevelopment) {
+          try {
+            const manifest = JSON.parse(
+              readFileSync('build/css/css-rev-manifest.json', 'utf8'),
+            );
+            cssFile = manifest['styles.css'] || cssFile;
+          } catch (e) {}
+        }
         return { ...dataJson, cssFile };
       }),
     )

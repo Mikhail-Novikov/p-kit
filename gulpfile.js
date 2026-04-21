@@ -26,6 +26,11 @@ const build = gulp.series(
   gulp.parallel(compileSass, compileUiKitSass, compileScripts, optimizeImages),
 );
 
-export const development = gulp.series(build, browserSync);
+const setDevelopmentEnv = (cb) => {
+  process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+  cb();
+};
+
+export const development = gulp.series(setDevelopmentEnv, build, browserSync);
 export const production = build;
 export const buildArchive = archive;

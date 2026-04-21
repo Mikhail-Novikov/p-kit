@@ -35,6 +35,7 @@ mixin alert(title, mods)
     }
 
   .alert(class=allMods, role="alert")&attributes(attributes)
+    i.alert__icon.icon-exclamation-not-fill
     if (typeof(title) !== 'undefined' && title !== '')
       h4.alert__header!= title
     block

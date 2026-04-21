@@ -1,1 +1,209 @@
-/* stylelint-disable no-empty-source */
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Bold.eot");
+  src:
+    local("/fonts/Manrope/Manrope Bold"),
+    local("Manrope-Bold"),
+    url("/fonts/Manrope/Manrope-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
+    url("/fonts/Manrope/Manrope-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Semibold.eot");
+  src:
+    local("Manrope/Manrope Semibold"),
+    local("Manrope-Semibold"),
+    url("/fonts/Manrope/Manrope-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Semibold.woff2") format("woff2"),
+    url("/fonts/Manrope/Manrope-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Regular.eot");
+  src:
+    local("Manrope Regular"),
+    local("Manrope-Regular"),
+    url("/fonts/Manrope/Manrope-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Regular.woff2") format("woff2"),
+    url("/fonts/Manrope/Manrope-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Light.eot");
+  src:
+    local("Manrope Light"),
+    local("Manrope-Light"),
+    url("/fonts/Manrope/Manrope-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Light.woff2") format("woff2"),
+    url("/fonts/Manrope/Manrope-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Medium.eot");
+  src:
+    local("Manrope Medium"),
+    local("Manrope-Medium"),
+    url("/fonts/Manrope/Manrope-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Medium.woff2") format("woff2"),
+    url("/fonts/Manrope/Manrope-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-Bold.eot");
+  src:
+    local("Inter Bold"),
+    local("Inter-Bold"),
+    url("/fonts/Inter/Inter-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Inter/Inter-Bold.woff2") format("woff2"),
+    url("/fonts/Inter/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "percoicon";
+  src: url("Percoicon/fonts/percoicon.eot");
+  src:
+    url("/fonts/Percoicon/percoicon.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Percoicon/percoicon.woff") format("woff"),
+    url("/fonts/Percoicon/percoicon.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "percoicon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  display: inline-block;
+  text-align: center;
+  speak: none;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telegram:before {
+  content: "\f000";
+}
+
+.icon-building:before {
+  content: "\f001";
+}
+
+.icon-burger:before {
+  content: "\f002";
+}
+
+.icon-close-mobile:before {
+  content: "\f003";
+}
+
+.icon-close:before {
+  content: "\f004";
+}
+
+.icon-link-arrow:before {
+  content: "\f005";
+}
+
+.icon-phone:before {
+  content: "\f006";
+}
+
+.icon-snowflake:before {
+  content: "\f007";
+}
+
+.icon-stopwatch:before {
+  content: "\f008";
+}
+
+.icon-leftright:before {
+  content: "\f009";
+}
+
+.icon-exclamation-danger:before {
+  content: "\f011";
+}
+
+.icon-exclamation-not-fill:before {
+  content: "\f012";
+}
+
+.icon-sync:before {
+  content: "\f00a";
+}
+
+.icon-island:before {
+  content: "\f00b";
+}
+
+.icon-equipment:before {
+  content: "\f00c";
+}
+
+.icon-key:before {
+  content: "\f00d";
+}
+
+.icon-hand-stop:before {
+  content: "\f00e";
+}
+
+.icon-lamp:before {
+  content: "\f00f";
+}
+
+.icon-shield:before {
+  content: "\f010";
+}
+
+.icon-vk-video:before {
+  content: "\f00a";
+}
+
+.icon-vk:before {
+  content: "\f009";
+}
+
+.icon-dzen:before {
+  content: "\f00b";
+}
+
+.icon-up-button:before {
+  content: "\f00c";
+}
