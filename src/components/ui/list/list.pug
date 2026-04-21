@@ -1,0 +1,55 @@
+//- Все примеси в этом файле должны начинаться c имени блока (list-unordered)
+
+mixin list-unordered(list, mods)
+  //- Принимает:
+  //-   list         {array}
+  //-   mods         {string} - список модификаторов
+  //- Вызов:
+    +list-unordered([], 'some-mod')
+    //-   title        {string} (опционально)
+    //- Вызов:
+    //-   +list-unordered([], 'some-mod', 'Заголовок')
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' list-unordered--' + modsList[i].trim();
+      }
+    }
+
+  .list-unordered(class=allMods)&attributes(attributes)
+    if typeof(arguments[2]) !== 'undefined' && arguments[2]
+      .list-unordered__title!= arguments[2]
+    ul.list-unordered__content
+      each item in list
+        li.list-unordered__item!= item
+
+  
+mixin list-ordered(list, mods)
+  //- Принимает:
+  //-   list     {array}
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+    +list-ordered([], 'some-mod')
+    //-   title    {string} (опционально)
+    //- Вызов:
+    //-   +list-ordered([], 'some-mod', 'Заголовок')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' list-ordered__content-item--' + modsList[i].trim();
+      }
+    }
+
+  .list-ordered(class=allMods, id=id, role="tabpanel")&attributes(attributes)
+    if typeof(arguments[2]) !== 'undefined' && arguments[2]
+      .list-ordered__title!= arguments[2]
+    ol.list-ordered__content
+      each item in list
+        li.list-ordered__item!= item

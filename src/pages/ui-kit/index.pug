@@ -176,3 +176,50 @@ block content
           `
         }
       ])
+
+      section.chapter
+        h2#list
+          | Lists
+
+        article.chapter-part
+          .chapter-part-col
+            h3#list-unordered
+              | Unordered List
+            p
+              | Предназначен для отображения ненумерованных списков с&nbsp;буллетами
+            br
+            +list-unordered([
+              'умные контроллеры с автономной работой и возможностью сложных решений;', 
+              'масштабируемые серверы с Full Rest API;',
+              'поддержка разных ОС и распределённых систем',
+              'разнообразные клиенты — веб и мобильные приложения.'
+              ], 
+              'news-list', 
+              'Ключевые тренды развития систем контроля доступа:'
+            )
+
+          .chapter-part-col.gray-bgcolor
+
+            code.language-markup
+              |&lt;ul class="list-unordered"&gt;
+              |  &lt;li class="list-unordered__item" &gt;Элемент списка 1&lt;/li&gt;
+              |  &lt;li class="list-unordered__item"&gt;Элемент списка 2&lt;/li&gt;
+              |&lt;/ul&gt;
+
+        article.chapter-part
+          .chapter-part-col
+            h3#list-ordered
+              | Ordered List
+            p
+              | Предназначен для отображения нумерованных списков с цифрами.
+            br
+            +list-ordered(['Элемент списка', 'Элемент списка'], 'some-mod')
+
+          .chapter-part-col.gray-bgcolor
+            h3#list-ordered
+              | 
+            code.language-markup
+              |&lt;ol class="list-ordered"&gt;
+              |  &lt;li class="list-ordered__item"&gt;Элемент списка 1&lt;/li&gt;
+              |  &lt;li class="list-ordered__item"&gt;Элемент списка 2&lt;/li&gt;
+              |&lt;/ol&gt;
