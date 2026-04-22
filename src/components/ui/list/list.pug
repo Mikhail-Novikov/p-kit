@@ -1,9 +1,10 @@
-//- Все примеси в этом файле должны начинаться c имени блока (list-unordered)
+//- Все примеси в этом файле должны начинаться c имени блока (list)
 
-mixin list-unordered(list, mods)
+mixin list-unordered(list, mods, title)
   //- Принимает:
   //-   list         {array}
   //-   mods         {string} - список модификаторов
+  //-   title        {string} - заголовок над списком
   //- Вызов:
     +list-unordered([], 'some-mod')
     //-   title        {string} (опционально)
@@ -19,9 +20,9 @@ mixin list-unordered(list, mods)
       }
     }
 
-  .list-unordered(class=allMods)&attributes(attributes)
-    if typeof(arguments[2]) !== 'undefined' && arguments[2]
-      .list-unordered__title!= arguments[2]
+  .list.list-unordered(class=allMods)&attributes(attributes)
+    if typeof(title) !== 'undefined' && title
+      .list-unordered__title!= title
     ul.list-unordered__content
       each item in list
         li.list-unordered__item!= item
@@ -47,9 +48,9 @@ mixin list-ordered(list, mods)
       }
     }
 
-  .list-ordered(class=allMods, id=id, role="tabpanel")&attributes(attributes)
-    if typeof(arguments[2]) !== 'undefined' && arguments[2]
-      .list-ordered__title!= arguments[2]
+  .list.list-ordered(class=allMods, id=id, role="tabpanel")&attributes(attributes)
+    if typeof(title) !== 'undefined' && title
+      .list-ordered__title!= title
     ol.list-ordered__content
       each item in list
         li.list-ordered__item!= item
