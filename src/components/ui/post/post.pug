@@ -1,0 +1,23 @@
+mixin post(title, text, pathImg, mods)
+  //- Принимает:
+  //-     {string} - путь к изображению
+  //-     {string} - альтернативный текст для изображения
+  //-     {string} - список модификаторов
+  //- Вызов:
+    +post('Заголовок', 'path/to/image.jpg', 'Альтернативный текст', 'square')
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + 'post--' + modsList[i].trim();
+      }
+    }
+
+  .post
+    .post__avatar 
+      img.post__avatar-img(src= pathImg, alt= text)
+    .post__details
+      h6.post-details__title= title
+      p.post-details__text= text

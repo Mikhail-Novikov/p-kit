@@ -14,6 +14,13 @@ $link-color: $color-main;
 $link-color-hover: $link-color;
 $border-color: #999999;
 
+// Bredcrumbs
+$breadcrumbs-color: $text-color-muted;
+$breadcrumbs-color-hover: $link-color-hover;
+
+// Шрифты
+$font-family: "Manrope", "Helvetica Neue", "Arial", sans-serif;
+
 // Базовая типографика
 $font-size: 16px;
 $font-size-h1: 40px;

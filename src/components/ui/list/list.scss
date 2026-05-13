@@ -3,18 +3,17 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .list {
-  &-unordered, 
-  &-ordered {
-    &--news-list {
-      // Стили для модификатора news-list
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      align-self: stretch;
-      padding: 16px;
-      background-color: #EBEDF0;
-    }
+  &.list-unordered, 
+  &.list-ordered {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+  }
+
+  .list-unordered,
+  .list-ordered {
 
     &__content {
       // Стили для элемента content
@@ -24,6 +23,11 @@
       align-items: flex-start;
       align-self: stretch;
       margin: 0;
+      line-height: inherit;
+
+      @media screen and (max-width: 450px) {
+        gap: 2px;
+      }
     }
 
     &__title {
@@ -31,6 +35,11 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 24px;
+
+      @media screen and (max-width: 450px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
 
     &__item {
@@ -40,33 +49,18 @@
       font-weight: 400;
       line-height: 24px;
       list-style: none;
-      margin-bottom: 1.5px;
+      margin-bottom: 0;
 
-      &::before {
-        content: "";
-        border-radius: 4px;
-        display: inline-block;
-        vertical-align: middle;
-        width: 4px;
-        height: 4px;
-        margin-right: 12px;
-        background-color: #2C2D2E;
-        position: absolute;
-        top: 12px;
-        left: -16px;
+      @media screen and (max-width: 450px) {
+        font-size: 16px;
+        line-height: 20px;
       }
     }
   }
 
-  &-unordered{
+  .list-unordered {
     // Стили для элемента item unordered
     &__item {
-      color: #2C2D2E;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 24px;
-      list-style: none;
-      margin-bottom: 1.5px;
       position: relative;
 
       &::before {
@@ -81,7 +75,23 @@
         position: absolute;
         top: 12px;
         left: -16px;
+
+        @media screen and (max-width: 450px) {
+          top: 10px;
+        }
       }
+    }
+  }
+
+  &.list-unordered--news {
+    // Стили для модификатора news
+    background-color: #EBEDF0;
+    padding: 16px;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: 450px) {
+      padding: 12px;
+      margin-bottom: 20px;
     }
   }
 }

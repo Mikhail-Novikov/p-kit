@@ -17,6 +17,11 @@ $font-size-alert: 12px;
   color: $text-color;
   background-color: $color-warning;
 
+  @media screen and (max-width: 450px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   & > * {
     margin-top: 0;
     margin-bottom: 0;
