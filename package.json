@@ -1,8 +1,8 @@
 {
-  "name": "pug-bem-start-project",
-  "version": "3.0.0",
-  "description": "Startkit for HTML/CSS/JS pages layout.",
-  "author": "Evgeny Ovchinnikov",
+  "name": "perco-ui-kit",
+  "version": "1.0.0",
+  "description": "Perco UI Kit",
+  "author": "Novikov MN",
   "license": "ISC",
   "main": "gulpfile.js",
   "type": "module",
@@ -25,6 +25,8 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "3.0.0",
     "@prettier/plugin-pug": "3.0.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "autoprefixer": "^10.5.0",
     "browser-sync": "3.0.2",
     "browserslist-to-esbuild": "2.1.1",
     "cpy": "11.1.0",
@@ -60,6 +62,7 @@
     "stylelint-config-htmlacademy": "4.2.3",
     "stylelint-config-recess-order": "7.1.0",
     "stylelint-order": "7.0.0",
+    "tailwindcss": "3.4.17",
     "w3c-html-validator": "1.9.0"
   },
   "dependencies": {
@@ -71,7 +74,7 @@
     "imask": "^7.6.1",
     "just-validate": "^4.3.0",
     "normalize.css": "^8.0.1",
-    "swiper": "^11.1.11",
+    "swiper": "12.1.4",
     "tippy.js": "^6.3.7"
   }
 }

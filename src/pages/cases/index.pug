@@ -12,8 +12,143 @@ block content
 
 
   main
-    .container
-      +breadcrumbs()
-        +breadcrumbs-item('Главная', '/')
-        +breadcrumbs-item('Услуги', '/cases')
-        +breadcrumbs-item('Турникеты TTD-08A в королевском аббатстве Фонтевро')
+    +breadcrumbs()
+      +breadcrumbs-item('Главная', '/')
+      +breadcrumbs-item('Портфолио', '/cases')
+    
+    section(class="mb-[60px] md:mb-[80px] lg:mb-[100px]")
+      .container
+        h1.h1 Портфолио 
+        div.flex.flex-row.justify-between.flex-wrap
+          div(class="max-w-[600px]")
+            p(class="mb-2")
+              |Среди клиентов компании — международные аэропорты, крупнейшие промышленные предприятия, спортивные арены, государственные учреждения, университеты, музеи и бизнес-центры.
+            p(class="mb-2")
+              |Компанию выбирают и крупнейшие международные бренды и корпорации: предъявляющие высокие требования к безопасности и организации доступа сотрудников и посетителей.
+            p(class="mb-2")
+              |В этом разделе представлены некоторые реализованные проекты и кейсы PERCo. Мы публикуем только открытые объекты — часть наших клиентов предпочитает не раскрывать информацию о применяемых системах безопасности. Тем не менее, представленные проекты позволяют оценить масштаб и разнообразие решений PERCo в разных отраслях и странах.
+
+          div.px-5.py-4(class="bg-secondary max-w-[520px] mt-8 lg:mt-0")
+            dl.mb-4.mt-0
+              dt.text-subhead.mb-4 Наши клиенты:
+              dd.ml-0 
+                ul.list-none.grid.gap-2.flex-wrap(class="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4")
+                  each i in [1, 2, 3, 4, 5, 6, 7, 8]
+                    li.py-2.px-1.mb-0
+                      img(src=`/images/cases/client-${i}.svg` alt="Наши клиенты")
+            a(href="#" class="font-[600] hover:underline duration-300") Посмотреть полный список
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] bg-secondary")
+      .container
+        div.filter
+          +field-select(
+            'Название',
+              {
+                name: 'select-object',
+                id: 'select-object'
+              },
+              [
+                {
+                  title: 'Все объекты',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Бизнес-центры',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Промышленные предприятия',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Спортивные и развлекательные объекты',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Государственные учреждения',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Музеи и театры',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Школы',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'ВУЗы',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Строительные объекты',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Офисы компаний',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Транспортные объекты',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Медицинские учреждения',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Жилые комплексы',
+                  attrs: {
+                    value: '',
+                  }
+                },
+                {
+                  title: 'Гостиничные комплексы',
+                  attrs: {
+                    value: '',
+                  }
+                },
+              ],
+              'Подсказка',
+              ''
+            )
+
+          select(name="equipment" class="filter-select") 
+            option(value="") Выберите объект
+            option(value="1") Объект 1
+            option(value="2") Объект 2
+            option(value="3") Объект 3
+
+
+        .cases-list.grid.gap-5
+          each i in [1, 2, 3, 4, 5, 6, 7, 8]
+            .cases-item
+              img(src=`/images/cases/case-${i}.png` alt="")
+              .cases-item-info
+                h3.h3 Название объекта
+                p.cases-item-desc Краткое описание выполненных работ на&nbsp;данном объекте.
+        

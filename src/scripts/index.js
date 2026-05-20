@@ -1,4 +1,4 @@
-// import { initSwiper } from './modules/swiper.js';
+import { initSwiper } from './modules/swiper.js';
 // import { initCountUp } from './modules/count-up.js';
 // import { initFancybox } from './modules/fancybox.js';
 // import { initImask } from './modules/imask.js';
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // burger.init();
   // const stickyHeader = new StickyHeader();
   // stickyHeader.init();
-  // initSwiper();
+  initSwiper();
   // initCountUp();
   // initFancybox();
   // initPhoneMask();

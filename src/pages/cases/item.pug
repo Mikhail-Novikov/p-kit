@@ -1,0 +1,256 @@
+extends ./layout/index
+
+block meta
+  title PERCo — оборудование и системы контроля доступа
+
+block consts
+  - const bodyClass = "cases";
+
+block content
+  header
+    .container
+
+
+  main
+    +breadcrumbs()
+      +breadcrumbs-item('Главная', '/')
+      +breadcrumbs-item('Услуги', '/cases')
+      +breadcrumbs-item('Турникеты TTD-08A в королевском аббатстве Фонтевро')
+    
+    section(class="mb-[60px] md:mb-[80px] lg:mb-[100px]")
+      .container
+        h1.h1 Турникеты TTD-08A в королевском аббатстве Фонтевро
+        div.flex.flex-row.justify-between.flex-wrap
+          p.cases-subtitle(class="mb-7 md:mb-0")
+            |Для организации контроля доступа на&nbsp;территорию старинного аббатства были установлены тумбовые турникеты TTD-08A. 
+            |Данную модель отличают всепогодное исполнение и&nbsp;наличие автоматической антипаники.
+          div.cases-cart__object.p-2
+            dl.cases-cart__object-dl-list
+              dt.object-dt-item Тип объекта:
+              dd.object-dd-item.ml-0 
+                a.perco-icons.flex.items-center.gap-2.text-main.underline(href="#")
+                  i.perco-icon-industries-cult.text-base
+                  span Музей
+            dl.cases-cart__object-dl-list
+              dt.object-dt-item Где расположен:
+              dd.object-dd-item.ml-0 Фонтевро, Франция
+            dl.cases-cart__object-dl-list
+              dt.object-dt-item Проходимость:
+              dd.object-dd-item.ml-0 1000 посетителей/день
+            ul.cases-cart__object-ul-list.list-none
+              li.object-li-item 
+                a Турникеты
+              li.object-li-item 
+                a Калитки
+              li.object-li-item 
+                a Ограждения
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] bg-secondary")
+      .container
+        h2.h2.mb-6 Объект
+        div.flex.justify-between(class="flex-col md:flex-row")
+          div(class="mr-[32px] order-1 md:order-0")
+            p(class="max-w-[600px] my-3") 
+              span(class="font-[600]") Королевское аббатство Фонтевро 
+              |&mdash;&nbsp;один из&nbsp;крупнейших средневековых монастырских комплексов, сохранившихся до&nbsp;наших времен.
+            p(class="max-w-[600px] my-3") 
+              |Аббатство расположено в&nbsp;долине замков Луары, внесенной в&nbsp;список Всемирного наследия ЮНЕСКО.
+              |Здесь расположены усыпальницы Генриха II, Элеоноры Аквитанской и&nbsp;Ричарда Львиное Сердце.
+          ul.list-none.flex.flex-row(class="gap-x-[32px] order-0 md:order-1 !mb-6")
+            li.text-center.shrink-0.mb-0
+              img.mx-auto(class="w-[56px] sm:w-[70px]" src="/images/cases/factoid-1.svg", alt="")
+              div.mt-2(class="text-subhead font-manrope text-[12px] font-semibold leading-[14px]") веков истории
+            li.text-center.shrink-0.mb-0
+              img.mx-auto(class="w-[56px] sm:w-[70px]" src="/images/cases/factoid-2.svg", alt="")
+              div.mt-2(class="text-subhead font-manrope text-[12px] font-semibold leading-[14px]") площадь
+            li.text-center.shrink-0.mb-0(class="max-w-[80px]")
+              img.mx-auto(class="w-[56px] sm:w-[70px]" src="/images/cases/factoid-3.svg", alt="")
+              div.mt-2(class="text-subhead font-manrope text-[12px] font-semibold leading-[14px]") посетителей в&nbsp;год
+
+        div.gallery-object(class="w-full mt-[20px] order-2")
+          .swiper.js-gallery-object-swiper
+            .slider-nav-container
+              .slider-pagination
+              .slider-navigation
+                .slider-nav-el.prev
+                .slider-nav-el.next
+            .swiper-wrapper
+              .swiper-slide
+                .swiper-slide-transform
+                  img.item.img-gal-item(src="/images/cases/object-1.jpg" alt="")
+                  img.item.img-gal-item(src="/images/cases/object-2.png" alt="")
+              .swiper-slide
+                .swiper-slide-transform
+                  img.item.img-gal-item(src="/images/cases/object-1.jpg" alt="")
+                  img.item.img-gal-item(src="/images/cases/object-2.png" alt="")
+              .swiper-slide
+                .swiper-slide-transform
+                  img.item.img-gal-item(src="/images/cases/object-1.jpg" alt="")
+                  img.item.img-gal-item(src="/images/cases/object-2.png" alt="")
+              .swiper-slide
+                .swiper-slide-transform
+                  img.item.img-gal-item(src="/images/cases/object-1.jpg" alt="")
+                  img.item.img-gal-item(src="/images/cases/object-2.png" alt="")
+
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] lg:pt-[80px]")
+      .container
+        div.flex.justify-between(class="flex-col md:flex-row items-start")
+          div(class="max-w-[467px] md:max-w-[490px] 2xl:max-w-[590px]")
+            h2.h2.mb-6 Задача и сложности
+            p.bg-primary.mb-6.p-3(class="font-[600]")
+              |Обеспечить надёжный контроль доступа в&nbsp;музейный комплекс 
+              |XII века с&nbsp;посещаемостью до&nbsp;1000 человек в&nbsp;день.
+            +list-unordered([
+                'Аббатство посещает до&nbsp;1000 человек в&nbsp;день, поэтому для организации контроля доступа было необходимо надежное и&nbsp;современное оборудование.;', 
+                'Оборудование должно гармонично вписаться в&nbsp;интерьеры как зданий XII&ndash;XIX&nbsp;веков, так и&nbsp;построенного в&nbsp;2021 году Музея современного искусства;',
+                'Оборудование должно соответствовать строгим европейским нормам пожарной и&nbsp;эвакуационной безопасности, законодательству о&nbsp;беспрепятственном доступе маломобильных групп, экологическим и&nbsp;электрическим нормам.',
+                ],
+              )
+          img(src="/images/cases/cite-avatar.svg" alt="Задача и сложности" class="w-full md:ml-[32px] mt-6 md:mt-0 max-w-[305px] md:max-w-[385px] 2xl:max-w-[590px]:")
+        
+        div.mt-10(class="md:mt-15 lg:mt-20")
+          h2.h2.mb-6 Решение
+          div.flex.cols-2.justify-between.flex-wrap(class="flex-col md:flex-row items-start")
+            div(class="md:max-w-[385px] lg:max-w-[490px] 2xl:max-w-[590px] md:mr-8 mb-8")
+              p(class="mb-3 mt-0")
+                |Указанным требованиям соответствуют скоростные проходы PERCo ST-01 и&nbsp;тумбовые турникеты PERCo TTD-08A.
+              p(class="my-3") 
+                |Скоростные проходы с&nbsp;распашными створками предназначены для работы на&nbsp;объектах с&nbsp;повышенными требованиями к&nbsp;дизайну и&nbsp;комфортности прохода. Приразрешающем сигнале от&nbsp;системы створки турникетов распахиваются, обеспечивая комфортный бесконтактный проход.
+              p(class="my-3") 
+                |Тумбовые турникеты TTD-08A отличают повышенная износостойкостью и&nbsp;наличие автоматической антипаники для эвакуации людей в&nbsp;экстренной ситуации.
+
+            div(class="mt-3 md:mt-0")
+              div.flex.flex-row.flex-wrap.gap-5(class="md:justify-end")
+                div(class="sm:max-w-[224px] lg:max-w-[350px] w-full")
+                  div(class="secel_item secel_item_2")
+                    a(href="/products/skorostnoy-shlagbaum-gf13n-so-streloy-kruglogo-secheniya-3-metra.php")
+                      div(class="image_icon")
+                        img(alt="Скоростной шлагбаум GF13N со стрелой круглого сечения 3 метра" src="/images/cases/ST-01-CC.webp")
+                      .section-el-name Скоростной шлагбаум GF13N со стрелой круглого сечения 3 метра
+                      .section-price-wrapper
+                        div(class="section_el_price") 252 017 ₽
+                        div(class="section_el_info") Цена со склада
+                          br
+                          | в Москве и Санкт-Петербурге
+                div(class="sm:max-w-[224px] lg:max-w-[350px] w-full")
+                  div(class="secel_item secel_item_3")
+                    a(href="/products/tumbovye-turnikety-tripody-tb01a.php")
+                      div(class="image_icon")
+                        img(alt="Тумбовый турникет-трипод ТВ01.9А", src="/images/cases/TBC01.webp")
+                      .section-el-name Тумбовый турникет-трипод ТВ01.9А
+                      .section-price-wrapper
+                        div(class="section_el_price") 307 894 ₽
+                        div(class="section_el_info") Цена со склада
+                          br
+                          | в Москве и Санкт-Петербурге
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] bg-secondary")
+      .container
+        h2.h2.mb-6 Результаты
+        div(class="md:max-w-[600px] 2xl:max-w-[700px] mb-15")
+          +list-unordered([
+            'Вход на территорию комплекса осуществляется по штрих-коду, выход — по кнопке с индикацией;',
+            'В системе реализована возможность построения следующих отчетов: по верификации, по проходам, по идентификаторам, по действующим правам, доступа, по сотрудникам и, посетителям, по событиям системы, по местоположению.',
+            ],
+          )
+        div.grid-cols-12.gap-2(class="flex flex-col md:grid items-start md:gap-10")
+          div(class="col-span-12")
+            img.w-full(alt="Результаты", src="/images/cases/result-1.png")
+          div(class="col-span-12 sm:col-span-9")
+            img(class="w-full" alt="Результаты", src="/images/cases/result-2.png")
+          div.flex.flex-col.col-span-12(class="sm:col-span-3")
+            img(class="max-w-100" alt="Результаты" src="/images/cases/result-logo.svg")
+            p(class="md:text-[24px] sm:text-[18px] text-[16px] text-main") Инсталлятор проекта: 
+              a.cursor-pointer.underline.text-inherit(href="") ITcotation
+
+    section(class="py-[40px] md:py-[60px] lg:py-[80px]")
+      .container
+        div.bg-primary(class="sm:grid grid-cols-12 gap-15 p-[40px] lg:p-[80px] xl:py-[100px] xl:px-[124px]")
+          div.col-span-12(class="md:col-span-6 sm:col-span-5")
+            h2.h2.mb-4(class="") Хотите сделать проект с&nbsp;нами?
+            div.text-subhead(class="text-[18px] leading-6 font-[600] mb-4") Оставьте контакты, мы&nbsp;свяжемся с&nbsp;вами
+            p Сегодня PERCo&nbsp;&mdash; лидер в&nbsp;производстве систем контроля доступа и&nbsp;дорожной автоматики, мы&nbsp;на&nbsp;рынке с&nbsp;1988&nbsp;года. Высокое качество обеспечило продукции PERCo признание как в&nbsp;России, так и&nbsp;за&nbsp;рубежом.
+
+          div.col-span-12(class="md:col-start-8 md:col-span-5 sm:col-span-5 mt-8 sm:mt-0")
+            form.flex.flex-col.gap-2(class="max-w-[400px]" action="" method="post")
+              div
+                label.block.font-medium.mb-1(class="text-[12px] leading-4") Имя
+                input.w-full.px-4.py-3.border.border-separator.rounded.text-md.placeholder-text-input(
+                  type="text"
+                  placeholder="Введите имя"
+                  required
+                )
+
+              div
+                label.block.font-medium.mb-1(class="text-[12px]") Email
+                input.w-full.px-3.py-3.border.border-separator.rounded.text-md.placeholder-text-input(
+                  type="email"
+                  placeholder="Введите email"
+                  required
+                )
+
+              div
+                label.block.font-medium.mb-1(class="text-[12px]") * Телефон
+                input.w-full.px-3.py-3.border.border-separator.rounded.text-md.placeholder-text-input(
+                  type="tel"
+                  placeholder="+7 (921) 234 56 78"
+                  required
+                )
+              
+              label.flex.items-center.gap-3.text-sm.leading-4.text-subhead.mt-3.mb-2
+                input.checkbox-custom(type="checkbox" required)
+                span Я ознакомился с Политикой конфиденциальности 
+                  br 
+                  |и согласен на обработку данных
+
+              button.w-full.py-4.bg-base.text-white.font-semibold.py-3.px-6.text-white.border-none(type="submit") 
+                |Отправить
+
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] bg-secondary")
+      .container
+        h2.h2.mb-6 Похожие кейсы
+
+        div.gallery-object(class="w-full mt-[20px]")
+          .swiper.js-gallery-cases-swiper
+            .swiper-wrapper
+              .swiper-slide
+                .flex.flex-col.h-full.bg-white.rounded
+                  img.w-full.object-cover.rounded-t(class="h-[175px] xl:h-[212px]" src="/images/cases/case-1.webp" alt="")
+                  div.p-4.flex.flex-col
+                    span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1") ЧАСТНЫЙ ДОМ ПРЕСТАРЕЛЬНЫХ
+                    h3.text-lg.font-semibold.leading-5.mb-3 Организация контроля доступа на территорию комплекса Belmont Village в Мексике
+                    p.text-xs.leading-5 Для организации контроля доступа резидентов комплекса на территории объекта. На периметре Belmont Village были установлены скоростные проходы PERCo ST-01 и автоматические калитки PERCo WMD-06.
+
+              .swiper-slide
+                .flex.flex-col.h-full.bg-white.rounded
+                  img.w-full.object-cover.rounded-t(class="h-[175px] xl:h-[212px]" src="/images/cases/case-2.webp" alt="")
+                  div.p-4.flex.flex-col
+                    span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1") СТАРЕЙШИЙ УНИВЕРСИТЕТ
+                    h3.text-lg.font-semibold.leading-5.mb-3 Турникеты TTD-08A на входе в кампус Миланского технического университета
+                    p.text-xs.leading-5 Для организации контроля доступа на территорию центра Giurati были установлены тумбовые турникеты TTD-08A. Данную модель отличают всепогодное исполнение и наличие автоматической антипаники.
+
+              .swiper-slide
+                .flex.flex-col.h-full.bg-white.rounded
+                  img.w-full.object-cover.rounded-t(class="h-[175px] xl:h-[212px]" src="/images/cases/case-3.webp" alt="")
+                  div.p-4.flex.flex-col
+                    span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1") БИЗНЕС-ЦЕНТР КЛАССА А
+                    h3.text-lg.font-semibold.leading-5.mb-3 Доступ в элитный бизнес-центр в Центральном районе Санкт-Петербурга
+                    p.text-xs.leading-5 Три входа в «Базель» оборудованы тумбовыми турникетами TTD-08A с автоматическими калитками WMD-06.
+
+              .swiper-slide
+                .flex.flex-col.h-full.bg-white.rounded
+                  img.w-full.object-cover.rounded-t(class="h-[175px] xl:h-[212px]" src="/images/cases/case-4.webp" alt="")
+                  div.p-4.flex.flex-col
+                    span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1") АЭРОПОРТ КРАСНОЯРСКА
+                    h3.text-lg.font-semibold.leading-5.mb-3 Скоростные проходы в новом терминале крупнейшего аэропорта Сибири
+                    p.text-xs.leading-5 В новом терминале аэропорта, введённом в эксплуатацию в 2017 году, установлены скоростные проходы ST-01 и регулируют поток пассажиров в зоне выхода из аэропорта, работая по принципу свободного выхода и запрещённого входа.
+
+              .swiper-slide
+                .flex.flex-col.h-full.bg-white.rounded
+                  img.w-full.object-cover.rounded-t(class="h-[175px] xl:h-[212px]" src="/images/cases/case-5.webp" alt="")
+                  div.p-4.flex.flex-col
+                    span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1") БИЗНЕС-ЦЕНТР
+                    h3.text-lg.font-semibold.leading-5.mb-3 Доступ в центре Санкт-Петербурга
+                    p.text-xs.leading-5 Три входа в комплекс оборудованы тумбовыми турникетами с автоматическими калитками для безопасного пропуска сотрудников и посетителей.

@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .h1 {
+    font-size: var(--text-3xl);
+    font-weight: var(--text-semibold);
+    line-height: 1.2;
+
+    @media screen and (min-width: 901px) {
+      font-size: var(--text-4xl);
+    }
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--text-semibold);
+    line-height: 1.2;
+
+    @media screen and (min-width: 901px) {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  p {
+    font-size: var(--text-md);
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    @media screen and (min-width: 901px) {
+      font-size: var(--text-base);
+    }
+  }
+}
+
+@theme {
+  --color-white: #FFFFFF;
+  --color-base: #214288;
+  --color-main: #2C2D2E;
+  --color-subhead: #6D7885;
+  --color-secondary: #F5F5F5;
+  --color-primary: #EBEDF0;
+  --color-separator: #E1E3E6;
+  --color-text-input: #818C99;
+  --breakpoint-sm: 657px;
+  --breakpoint-md: 901px;
+  --breakpoint-lg: 1469px;
+  --breakpoint-xl: 1529px;
+  --breakpoint-2xl: 1921px;
+  --breakpoint-3xl: 2561px;
+
+  --container-sm: 468px;
+  --container-md: 712px;
+  --container-lg: 956px;
+  --container-xl: 1200px;
+  --container-2xl: 1468px;
+  --container-3xl: 1920px;
+
+  --spacing-0: 0;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-13: 52px;
+  --spacing-14: 56px;
+  --spacing-15: 60px;
+  --spacing-16: 64px;
+  --spacing-17: 68px;
+
+  --my-marker: 4px;
+
+  --text-semibold: 600;
+
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+}

@@ -17,8 +17,7 @@
   src:
     local("Manrope/Manrope Semibold"),
     local("Manrope-Semibold"),
-    url("/fonts/Manrope/Manrope-Semibold.eot?#iefix")
-      format("embedded-opentype"),
+    url("/fonts/Manrope/Manrope-Semibold.eot?#iefix") format("embedded-opentype"),
     url("/fonts/Manrope/Manrope-Semibold.woff2") format("woff2"),
     url("/fonts/Manrope/Manrope-Semibold.ttf") format("truetype");
   font-weight: 600;
@@ -79,135 +78,209 @@
 
 @font-face {
   font-family: "percoicon";
-  src: url("Percoicon/fonts/percoicon.eot");
-  src:
-    url("/fonts/Percoicon/percoicon.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/Percoicon/percoicon.woff") format("woff"),
-    url("/fonts/Percoicon/percoicon.woff2") format("woff2");
+  src: url("/fonts/Percoicon/percoicon.woff2") format("woff2"),
+    url("/fonts/Percoicon/percoicon.ttf") format("truetype"),
+    url("/fonts/Percoicon/percoicon.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: "percoicon" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1em;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-}
+.perco-icons {
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  display: inline-block;
-  text-align: center;
-  speak: none;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  [class^="perco-icon-"],
+  [class*=" perco-icon-"] {
+    font-family: "percoicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
 
-.icon-telegram:before {
-  content: "\f000";
-}
+  [class^="perco-icon-"]:before,
+  [class*=" perco-icon-"]:before {
+    display: inline-block;
+    text-align: center;
+    speak: none;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-.icon-building:before {
-  content: "\f001";
-}
+  .perco-icon-telegram:before {
+    content: "\f000";
+  }
 
-.icon-burger:before {
-  content: "\f002";
-}
+  .perco-icon-building:before {
+    content: "\f001";
+  }
 
-.icon-close-mobile:before {
-  content: "\f003";
-}
+  .perco-icon-burger:before {
+    content: "\f002";
+  }
 
-.icon-close:before {
-  content: "\f004";
-}
+  .perco-icon-close-mobile:before {
+    content: "\f003";
+  }
 
-.icon-link-arrow:before {
-  content: "\f005";
-}
+  .perco-icon-close:before {
+    content: "\f004";
+  }
 
-.icon-phone:before {
-  content: "\f006";
-}
+  .perco-icon-link-arrow:before {
+    content: "\f005";
+  }
 
-.icon-snowflake:before {
-  content: "\f007";
-}
+  .perco-icon-phone:before {
+    content: "\f006";
+  }
 
-.icon-stopwatch:before {
-  content: "\f008";
-}
+  .perco-icon-snowflake:before {
+    content: "\f007";
+  }
 
-.icon-leftright:before {
-  content: "\f009";
-}
+  .perco-icon-stopwatch:before {
+    content: "\f008";
+  }
 
-.icon-exclamation-danger:before {
-  content: "\f011";
-}
+  .perco-icon-leftright:before {
+    content: "\f009";
+  }
 
-.icon-exclamation-not-fill:before {
-  content: "\f012";
-}
+  .perco-icon-exclamation-danger:before {
+    content: "\f011";
+  }
 
-.icon-sync:before {
-  content: "\f00a";
-}
+  .perco-icon-exclamation-not-fill:before {
+    content: "\f012";
+  }
 
-.icon-island:before {
-  content: "\f00b";
-}
+  .perco-icon-sync:before {
+    content: "\f00a";
+  }
 
-.icon-equipment:before {
-  content: "\f00c";
-}
+  .perco-icon-island:before {
+    content: "\f00b";
+  }
 
-.icon-key:before {
-  content: "\f00d";
-}
+  .perco-icon-equipment:before {
+    content: "\f00c";
+  }
 
-.icon-hand-stop:before {
-  content: "\f00e";
-}
+  .perco-icon-key:before {
+    content: "\f00d";
+  }
 
-.icon-lamp:before {
-  content: "\f00f";
-}
+  .perco-icon-hand-stop:before {
+    content: "\f00e";
+  }
 
-.icon-shield:before {
-  content: "\f010";
-}
+  .perco-icon-lamp:before {
+    content: "\f00f";
+  }
 
-.icon-vk-video:before {
-  content: "\f00a";
-}
+  .perco-icon-shield:before {
+    content: "\f010";
+  }
 
-.icon-vk:before {
-  content: "\f009";
-}
+  .perco-icon-vk-video:before {
+    content: "\f00a";
+  }
 
-.icon-dzen:before {
-  content: "\f00b";
-}
+  .perco-icon-vk:before {
+    content: "\f009";
+  }
 
-.icon-up-button:before {
-  content: "\f00c";
-}
+  .perco-icon-dzen:before {
+    content: "\f00b";
+  }
 
-.icon-r-arrow:before {
-  content: "\f013";
+  .perco-icon-up-button:before {
+    content: "\f00c";
+  }
+
+  .perco-icon-r-arrow:before {
+    content: "\f013";
+  }
+
+  .perco-icon-industries-vuz:before {
+    content: "\f022";
+  }
+
+  .perco-icon-industries-stroy:before {
+    content: "\f021";
+  }
+
+  .perco-icon-industries-ofis:before {
+    content: "\f020";
+  }
+
+  .perco-icon-industries-bc:before {
+    content: "\f01F";
+  }
+
+  .perco-icon-industries-transp:before {
+    content: "\f01E";
+  }
+
+  .perco-icon-industries-med:before {
+    content: "\f01D";
+  }
+
+  .perco-icon-industries-obr:before {
+    content: "\f01C";
+  }
+
+  .perco-icon-industries-finans:before {
+    content: "\f01B";
+  }
+
+  .perco-icon-industries-cult:before {
+    content: "\f01A";
+  }
+
+  .perco-icon-industries-sport:before {
+    content: "\f019";
+  }
+
+  .perco-icon-industries-gos:before {
+    content: "\f018";
+  }
+
+  .perco-icon-industries-atom:before {
+    content: "\f017";
+  }
+
+  .perco-icon-industries-neft:before {
+    content: "\f016";
+  }
+
+  .perco-icon-industries-prom:before {
+    content: "\f015";
+  }
+
+  .perco-icon-industries-hotels:before {
+    content: "\f023";
+  }
+
+  .perco-icon-industries-jil:before {
+    content: "\f024";
+  }
+
+  .perco-icon-sports-enter:before {
+    content: "\f025";
+  }
+
+  .perco-icon-max-messenger:before {
+    content: "\f026";
+  }
 }

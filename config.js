@@ -5,6 +5,7 @@ export default {
   ],
   alwaysAddBlocks: [],
   addStyle: [
+    'src/styles/tailwind.scss',
     'src/styles/variables.scss',
     'src/styles/mixins.scss',
     'src/styles/keyframes.scss',
@@ -12,6 +13,7 @@ export default {
     'src/styles/vendor.scss',
     'src/styles/global.scss',
     'src/styles/fonts.scss',
+    'src/styles/cases.scss',
   ],
   addJsBefore: [
     // './utils/some.js',

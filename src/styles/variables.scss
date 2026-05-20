@@ -7,6 +7,7 @@ $color-warning-light: #FDF0D2;
  
 // Семантические цвета
 $text-color: #2C2D2E;
+$text-subhead-color: #6D7885;
 $heading-color: #1a1a1a; 
 $text-color-muted: #808080;
 $body-bg: #ffffff;
@@ -42,6 +43,12 @@ $screen-lg: 1024px;
 $screen-xl: 1440px;
 $screen-xxl: 1800px;
 
+$breakpoint-sm: 656px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1468px;
+$breakpoint-xl: 1528px;
+$breakpoint-2xl: 1920px;
+
 // Контейнер
 $container-width: 1170px;
 $container-gap: 20px;
@@ -60,6 +67,8 @@ $menu-desktop-width: $screen-lg;
 $toggler-part-height: 2px;
 $z-index-modal: 100;
 $aos-distance: 100px;
+$bg-secondary: #F5F5F5;
+$bg-tertiary: #F9F9F9;
 
 // Retina
 $retina-dpi: 144dpi;

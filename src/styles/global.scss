@@ -56,10 +56,6 @@ a {
   }
 }
 
-h1,
-.h1,
-h2,
-.h2,
 h3,
 .h3,
 h4,
@@ -73,16 +69,6 @@ h6,
   font-weight: $heading-font-weight;
   line-height: 1.2;
   color: $heading-color;
-}
-
-h1,
-.h1 {
-  font-size: $font-size-h1;
-}
-
-h2,
-.h2 {
-  font-size: $font-size-h2;
 }
 
 h3,
@@ -106,8 +92,32 @@ h6,
 }
 
 .container {
-  width: min($container-width, 100% - calc($container-gap * 2));
-  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-sm, min(1170px, 100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: #{$breakpoint-sm + 1}) {
+    max-width: var(--container-md);
+  }
+
+  @media (min-width: #{$breakpoint-md + 1}) {
+    max-width: var(--container-lg);
+  }
+
+  @media (min-width: #{$breakpoint-lg + 1}) {
+    max-width: var(--container-xl);
+  }
+
+  @media (min-width: #{$breakpoint-xl + 1}) {
+    max-width: var(--container-2xl);
+  }
+
+  @media (min-width: #{$breakpoint-2xl + 1}) {
+    max-width: var(--container-3xl);
+  }
 }
 
 .visually-hidden {

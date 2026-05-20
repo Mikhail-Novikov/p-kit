@@ -33,7 +33,7 @@ function createOptionsFormat() {
 export const copyImages = (cb) => {
   const copiedImages = [];
 
-  copiedImages.push(`src/assets/images/*.{${FILE_EXTENSIONS.join(',')}}`);
+  copiedImages.push(`src/assets/images/**/*.{${FILE_EXTENSIONS.join(',')}}`);
 
   const addBlockImages = (blockName) => {
     const blockPath = findBlockPath(blockName);
@@ -59,8 +59,9 @@ export const copyImages = (cb) => {
       .src(copiedImages, {
         encoding: false,
         allowEmpty: true,
+        base: 'src/assets',
       })
-      .pipe(gulp.dest('build/images'));
+      .pipe(gulp.dest('build'));
   } else {
     return cb();
   }

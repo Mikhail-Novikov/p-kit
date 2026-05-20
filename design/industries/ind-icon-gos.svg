@@ -1,0 +1,20 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Clients icons" clip-path="url(#clip0_12970_3817)">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M13.0667 2.66667H8.74097V5H12V16H4V5H7.73333V0H8.74097H13.0667V2.66667Z" fill="#2B56B1"/>
+<g id="Rectangle 2">
+<rect y="8" width="3" height="8" fill="#2B56B1"/>
+<rect y="8" width="3" height="8" fill="#2B56B1"/>
+<rect y="8" width="3" height="8" fill="#2B56B1"/>
+</g>
+<g id="Rectangle 3">
+<rect x="13" y="8" width="3" height="8" fill="#2B56B1"/>
+<rect x="13" y="8" width="3" height="8" fill="#2B56B1"/>
+<rect x="13" y="8" width="3" height="8" fill="#2B56B1"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_12970_3817">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

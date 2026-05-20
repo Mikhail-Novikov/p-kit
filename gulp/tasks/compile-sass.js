@@ -7,6 +7,8 @@ import gulpIf from 'gulp-if';
 import rev from 'gulp-rev';
 import gulpSass from 'gulp-sass';
 import lightningcss from 'postcss-lightningcss';
+import tailwindcss from '@tailwindcss/postcss';
+import autoprefixer from 'autoprefixer';
 import * as dartSass from 'sass';
 import { isDevelopment } from '../utils.js';
 
@@ -26,6 +28,8 @@ export const compileSass = () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(
       postcss([
+        tailwindcss,
+        autoprefixer,
         lightningcss({
           lightningcssOptions: {
             minify: !isDevelopment,
@@ -48,5 +52,11 @@ export const compileUiKitSass = () =>
       }),
     )
     .pipe(sass())
+    .pipe(
+      postcss([
+        tailwindcss,
+        autoprefixer,
+      ]),
+    )
     .pipe(gulp.dest('build/css'))
     .pipe(browsersync.stream());
