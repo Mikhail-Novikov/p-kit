@@ -4,7 +4,11 @@ block meta
   title PERCo — оборудование и системы контроля доступа
 
 block consts
-  - const bodyClass = "cases";
+  include ./data/case-object-types
+  include ./data/case-equipment-types
+  include ./data/cases
+  -
+    const bodyClass = "cases";
 
 block content
   header
@@ -19,13 +23,13 @@ block content
     section(class="mb-[60px] md:mb-[80px] lg:mb-[100px]")
       .container
         h1.h1 Портфолио 
-        div.flex.flex-row.justify-between.flex-wrap
+        div.flex.flex-row.justify-between.flex-wrap.items-start
           div(class="max-w-[600px]")
             p(class="mb-2")
               |Среди клиентов компании — международные аэропорты, крупнейшие промышленные предприятия, спортивные арены, государственные учреждения, университеты, музеи и бизнес-центры.
             p(class="mb-2")
               |Компанию выбирают и крупнейшие международные бренды и корпорации: предъявляющие высокие требования к безопасности и организации доступа сотрудников и посетителей.
-            p(class="mb-2")
+            p(class="mb-5")
               |В этом разделе представлены некоторые реализованные проекты и кейсы PERCo. Мы публикуем только открытые объекты — часть наших клиентов предпочитает не раскрывать информацию о применяемых системах безопасности. Тем не менее, представленные проекты позволяют оценить масштаб и разнообразие решений PERCo в разных отраслях и странах.
 
           div.px-5.py-4(class="bg-secondary max-w-[520px] mt-8 lg:mt-0")
@@ -36,119 +40,88 @@ block content
                   each i in [1, 2, 3, 4, 5, 6, 7, 8]
                     li.py-2.px-1.mb-0
                       img(src=`/images/cases/client-${i}.svg` alt="Наши клиенты")
-            a(href="#" class="font-[600] hover:underline duration-300") Посмотреть полный список
+            a(href="#" class="font-[600] hover:underline duration-300 py-4 inline-block") Посмотреть полный список
 
-    section(class="pb-[60px] md:pb-[80px] lg:pb-[100px] pt-[40px] md:pt-[60px] bg-secondary")
-      .container
-        div.filter
+        div.flex.flex-row.gap-4.mt-8
           +field-select(
-            'Название',
-              {
-                name: 'select-object',
-                id: 'select-object'
-              },
-              [
-                {
-                  title: 'Все объекты',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Бизнес-центры',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Промышленные предприятия',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Спортивные и развлекательные объекты',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Государственные учреждения',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Музеи и театры',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Школы',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'ВУЗы',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Строительные объекты',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Офисы компаний',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Транспортные объекты',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Медицинские учреждения',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Жилые комплексы',
-                  attrs: {
-                    value: '',
-                  }
-                },
-                {
-                  title: 'Гостиничные комплексы',
-                  attrs: {
-                    value: '',
-                  }
-                },
-              ],
-              'Подсказка',
-              ''
-            )
+            'Все объекты',
+            objectTypes,
+            'where-wrapper w-[330px]',
+            'where-countries select-value',
+            '',
+            'where-dropdown'
+          )
 
-          select(name="equipment" class="filter-select") 
-            option(value="") Выберите объект
-            option(value="1") Объект 1
-            option(value="2") Объект 2
-            option(value="3") Объект 3
+          +field-select(
+            'Все оборудование',
+            equipmentTypes,
+            'where-wrapper w-[330px]',
+            'where-countries select-value',
+            '',
+            'where-dropdown'
+          )
 
 
-        .cases-list.grid.gap-5
-          each i in [1, 2, 3, 4, 5, 6, 7, 8]
-            .cases-item
-              img(src=`/images/cases/case-${i}.png` alt="")
-              .cases-item-info
-                h3.h3 Название объекта
-                p.cases-item-desc Краткое описание выполненных работ на&nbsp;данном объекте.
-        
+        .cases-list.grid.gap-5.mt-8(class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4")
+          each i in casesList
+            .flex.flex-col.h-full.bg-white.rounded
+              img.w-full.object-cover.rounded-t.mb-4(class="h-[175px] xl:h-[212px]" src=i.image alt=i.title)
+              div.flex.flex-col
+                span.text-subhead.font-semibold.uppercase(class="text-[14px] font-[500] pb-1")= i.category
+                h3.text-lg.font-semibold.leading-6.mb-3= i.title
+                p.text-xs.leading-5= i.description
+
+    section(class="pb-[60px] md:pb-[80px] lg:pb-[140px] lg:pt-[100px] pt-[40px] md:pt-[60px] bg-secondary")
+      .container
+        h2.h2.mb-8 Почему выбирают PERCo?
+        div.grid.gap-5.perco-icons(class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4")
+          .flex.flex-col.px-8.py-10.items-center.bg-white(class="shadow-[0_0_20px_rgba(0,0,0,0.1)]")
+            i.perco-icon-sheet.text-base(class="text-[60px] mb-3")
+            h4(class="text-lg text-center font-semibold mb-6") Качество и надежность
+            p.leading-6.font-medium Оборудование PERCo выпускается с 1988 года, имеют высокую степень надежности, которая проверена десятками тысяч установок в 93 странах мира.
+          .flex.flex-col.px-8.py-10.items-center.bg-white(class="shadow-[0_0_20px_rgba(0,0,0,0.1)]")
+            i.perco-icon-certificat.text-base(class="text-[60px] mb-3")
+            h4(class="text-lg text-center font-semibold mb-6") 5 лет гарантии
+            p.leading-6.font-medium Гарантийное и послегарантийное обслуживание оборудования PERCo осуществляется в сертифицированных сервисных центрах во всех регионах России, а также в Беларуси, Казахстане. 
+          .flex.flex-col.px-8.py-10.items-center.bg-white(class="shadow-[0_0_20px_rgba(0,0,0,0.1)]")
+            i.perco-icon-select.text-base(class="text-[60px] mb-3")
+            h4(class="text-lg text-center font-semibold mb-6") Большой выбор моделей
+            p.leading-6.font-medium PERCo выпускает широкий модельный ряд контроллеров и считывателей, удовлетворяющих различным требованиям к внешнему виду, габаритам и степени перекрытия прохода.
+          .flex.flex-col.px-8.py-10.items-center.bg-white(class="shadow-[0_0_20px_rgba(243,243,243,0.8)]")
+            i.perco-icon-object-plus.text-base(class="text-[60px] mb-3")
+            h4(class="text-lg text-center font-semibold mb-6") Работа на разных объектах
+            p.leading-6.font-medium Электронные проходные могут использоваться в составке систем контроля доступа на промышленных предприятиях, в государственных учреждениях, ВУЗахб, больницах, на спортивных, развлекательных и других объектах.
+
+
+    section(class="my-[40px] md:my-[40px] lg:my-[60px]")
+      .container
+        h1.h1.mb-8 Выгодное решение
+        div.flex.cols-2.justify-between.flex-wrap(class="flex-col md:flex-row items-start")
+          div(class="mt-3 md:mt-0")
+            div.flex.flex-row.flex-wrap.gap-5(class="md:justify-end")
+              div(class="sm:max-w-[224px] lg:max-w-[350px] w-full")
+                div(class="secel_item secel_item_2")
+                  a(href="/products/skorostnoy-shlagbaum-gf13n-so-streloy-kruglogo-secheniya-3-metra.php")
+                    div(class="image_icon")
+                      img(alt="Скоростной шлагбаум GF13N со стрелой круглого сечения 3 метра" src="/images/cases/ST-01-CC.webp")
+                    .section-el-name Скоростной шлагбаум GF13N со стрелой круглого сечения 3 метра
+                    .section-price-wrapper
+                      div(class="section_el_price") 252 017 ₽
+                      div(class="section_el_info") Цена со склада
+                        br
+                        | в Москве и Санкт-Петербурге
+              div(class="sm:max-w-[224px] lg:max-w-[350px] w-full")
+                div(class="secel_item secel_item_3")
+                  a(href="/products/tumbovye-turnikety-tripody-tb01a.php")
+                    div(class="image_icon")
+                      img(alt="Тумбовый турникет-трипод ТВ01.9А", src="/images/cases/TBC01.webp")
+                    .section-el-name Тумбовый турникет-трипод ТВ01.9А
+                    .section-price-wrapper
+                      div(class="section_el_price") 307 894 ₽
+                      div(class="section_el_info") Цена со склада
+                        br
+                        | в Москве и Санкт-Петербурге
+
+          div(class="md:max-w-[385px] lg:max-w-[490px] 2xl:max-w-[590px] pl-8 mt-8 md:mt-0")
+            ul.list.list-none.check-wellige-circle
+              li Экономически выгодное решение&nbsp;&mdash; электронные проходные в&nbsp;комплекте с&nbsp;активированным программным обеспечением по&nbsp;специальным ценам.

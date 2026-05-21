@@ -4,71 +4,105 @@
 @use "sass:color";
 
 .field-select {
-  $block-name: &; // #{$block-name}__element
 
-  display: block;
-  margin-bottom: $typo-margin-vertical;
+  &.custom-select-box {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    line-height: 150%;
 
-  &__name {
-    @include field-name;
+    &.industry {
+      max-width: 345px;
+    }
   }
 
-  // &__select-wrap {}
+  .select-value {
+    padding: 10px 12px;
+    width: 100%;
+    border: 1px solid #E1E3E6;
+    background-color: #F5F5F5;
+    outline: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.03), 0px 2px 2px rgba(0, 0, 0, 0.06);
 
-  // Оформление штатного селекта
-  // &__select {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  //   width: 100%;
-  //   line-height: $line-height;
-  //   padding: $field-padding-vertical $field-padding-horizontal;
-  //   padding-right: 35px;
-  //   font-size: inherit;
-  //   font-family: inherit;
-  //   border: 1px solid $border-color;
-  //   border-radius: $border-radius;
-  //   appearance: none;
-  //   background-color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
 
-  //   &[multiple] {
-  //     background-image: none;
-  //     min-height: 6.8em;
-  //   }
-
-  //   &::-ms-expand {
-  //     display: none;
-  //   }
-
-  //   &:active,
-  //   &:focus {
-  //     @include field-focus;
-  //   }
-
-  //   &[disabled],
-  //   &[readonly] {
-  //     cursor: default;
-  //     background-color: #e6e6e6;
-  //   }
-  // }
-
-  &__help-text {
-    @include field-help-text;
+    &::after {
+      content: '';
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      background: url('../images/swap-icon.svg') no-repeat center center / contain;
+      pointer-events: auto !important;
+      margin-left: 8px;
+      flex-shrink: 0;
+    }
   }
 
-  &--error {
-    color: $color-danger;
+  .dropdown-wrapper {
+    width: 100%;
+    padding: 10px 5px 10px 0;
+    border-right: 1px solid #CBCBCB;
+    border-left: 1px solid #CBCBCB;
+    border-bottom: 1px solid #CBCBCB;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+    display: none;
+    background: white;
 
-    #{$block-name}__name,
-    #{$block-name}__select,
-    #{$block-name}__help-text {
-      color: $color-danger;
+    &.active {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      z-index: 100;
+    }
+  }
+
+  .where-dropdown,
+  .dropdown-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+
+    li {
+      padding: 10px 12px;
+      cursor: pointer;
+
+      &.active {
+        background: #f2f2f2;
+      }
+
+      &:hover {
+        background: #f2f2f2;
+      }
     }
 
-    #{$block-name}__select,
-    .choices__inner,
-    .choices:after {
-      background-color: color.adjust($color-danger, $lightness: 35%);
-      border-color: $color-danger;
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 15px;
+      padding-right: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 25px;
+      padding-right: 10px;
     }
   }
 }

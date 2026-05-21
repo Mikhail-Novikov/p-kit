@@ -95,4 +95,28 @@
       margin-bottom: 20px;
     }
   }
+
+  &.check-wellige-circle {
+    // Стили для модификатора check-wellige-circle
+    li {
+      position: relative;
+    }
+  
+    li::before {
+      content: "\f02B";
+      font-family: "percoicon" !important;
+      font-size: 24px;
+      color: var(--color-base);
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+      position: absolute;
+      top: -4px;
+      left: -30px;
+
+      @media screen and (max-width: 450px) {
+        top: 10px;
+      }
+    }
+  }
 }

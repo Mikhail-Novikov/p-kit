@@ -98,7 +98,6 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1em;
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -109,6 +108,7 @@
     display: inline-block;
     text-align: center;
     speak: none;
+    font-size: inherit;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
@@ -282,5 +282,25 @@
 
   .perco-icon-max-messenger:before {
     content: "\f026";
+  }
+  
+  .perco-icon-object-plus:before {
+    content: "\f027";
+  }
+  
+  .perco-icon-select:before {
+    content: "\f028";
+  }
+
+  .perco-icon-certificat:before {
+    content: "\f029";
+  }
+
+  .perco-icon-sheet:before {
+    content: "\f02A";
+  }
+  
+  .perco-icon-check-wellige-circle:before {
+    content: "\f02B";
   }
 }
